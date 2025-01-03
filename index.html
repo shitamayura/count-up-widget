@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Up Widget</title>
+</head>
+<body>
+    <div id="counter">0 days since start date</div>
+    <script>
+        const startDate = new Date('2023-01-01T00:00:00'); // カウントアップの開始日
+        function updateCounter() {
+            const now = new Date();
+            const diff = now - startDate;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById('counter').innerText = `${days} days since start date`;
+        }
+        setInterval(updateCounter, 1000);
+    </script>
+</body>
+</html>
